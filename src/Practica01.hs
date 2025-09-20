@@ -71,20 +71,29 @@ relacionCongruentesModuloN n a b
 -- Cero es natural, Suc Cero es natural, Suc Suc Cero es natural, etc.
 data Natural = Cero | Suc Natural deriving (Show,Eq) --Esto es para que se muestre y que se puedan comparar
 
+--Si el numero tiene al menos dos sucesores va pasar la primera regla, aun si n es natural con varios o un sucesor, y si el numero tiene solo un sucesor devuelve falso, tomamos cero como par para poder terminar la funcion al evaluar n.  
 esPar :: Natural -> Bool
-esPar = undefined
+esPar Cero = True
+esPar (Suc (Suc n)) = esPar n
+esPar (Suc n) = False
 
 iguales :: Natural -> Natural -> Bool
-iguales = undefined
+iguales Cero Cero = True
+iguales Cero (Suc y) = False
+iguales (Suc x) Cero = False
+iguales (Suc x) (Suc y) = iguales x y
 
 maximo :: Natural -> Natural -> Natural 
-maximo = undefined
-
-potencia :: Natural -> Natural -> Natural
-potencia = undefined
+maximo Cero Cero = Cero
+maximo Cero (Suc y) = Suc y
+maximo (Suc x) Cero = Suc x
+maximo (Suc x) (Suc y) = Suc (maximo x y)
 
 multiplicacion :: Natural -> Natural -> Natural
-multiplicacion = undefined
+multiplicacion Cero m = Cero
+multiplicacion (Suc Cero) m = m
+multiplicacion (Suc n) m = suma m (multiplicacion n m) --necesito la suma
+--multiplicacion (Suc n) m = suma n (multiplicacion n m) MAL HECHO
 
 suma :: Natural -> Natural -> Natural
-suma = undefined
+suma Cero m = m
