@@ -1,3 +1,4 @@
+module Practica01 where
 --Practica 01
 --Funciones :
 --1. Valor Abs :: Int -> Int
