@@ -21,7 +21,7 @@ En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integra
     +Integrante 1 : Jimenez Garcia Angel 
         -No. de Cuenta: 323066820
     +Integrante 2 : Madrigal Baruc Santiago
-        -No. de Cuenta: 
+        -No. de Cuenta: 32308395
     +Integrante 3
         -No. de Cuenta: 
 
