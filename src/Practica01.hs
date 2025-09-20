@@ -41,18 +41,30 @@ comparador n m =
 puntoMedio :: (Float, Float) -> (Float, Float) -> (Float, Float)
 puntoMedio (x1, y1) (x2, y2) = ((x1 + x2) / 2, (y1 + y2)  / 2)
 -- Devuelve el punto medio entre (x1,y1) y (x2,y2)
---RELACIONES
-type Rel a b = [(a, b)]
-
+--Relaciones
+--Sean A y B conjuntos tales que A = B = {1,2,3,...,30}
+--1. relacionDivisor :: Rel Int Int 
+--En esta relacion R1, tenemos que aR1b si a y b tienen la misma paridad y a es divisor de b
+--La funcion relacionDivisor admite dos numeros enteros a y b si cumplen las 2 condiciones, devuelve True en caso contrario False
+--Primero definimos el tipo Rel para las relaciones entre dos conjuntos
+type Rel a b = a -> b -> (a, b)
+--La funcion devuelve la R1 sabiendo que aR1b si a y b tienen la misma paridad y a es divisor de b 
 relacionDivisor :: Rel Int Int
-relacionDivisor = undefined
-
+relacionDivisor a b
+  | even a == even b && b `mod` a == 0 = (a, b)
+--funcion auxiliar even la utilice para verificar si los numeros son pares
+--2. relacionSumaEspecial :: Rel Int Int
+--La funcion devuelve la R2 sabiendo que aR2b si a + b es multiplo de 5 y a < b
 relacionSumaEspecial :: Rel Int Int
-relacionSumaEspecial = undefined
-
+relacionSumaEspecial a b
+  | (a + b) `mod` 5 == 0 && a < b = (a, b)
+--funcion auxiliar even la utilice para verificar si los numeros son pares
+--3. relacionCongruentesModulo n :: Int -> Rel Int Int
+--La funcion devuelve la R3 sabiendo que aR3b  se debe recibir un entero n y tenemos que aR3b si a %n = b %n con a̸ = b
 relacionCongruentesModuloN :: Int -> Rel Int Int
-relacionCongruentesModuloN = undefined
-
+relacionCongruentesModuloN n a b
+  | a `mod` n == b `mod` n && a /= b = (a, b)
+  
 
 --NATURALES
 -- Cero es natural, Suc Cero es natural, Suc Suc Cero es natural, etc.
