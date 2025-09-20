@@ -41,6 +41,7 @@ comparador n m =
 puntoMedio :: (Float, Float) -> (Float, Float) -> (Float, Float)
 puntoMedio (x1, y1) (x2, y2) = ((x1 + x2) / 2, (y1 + y2)  / 2)
 -- Devuelve el punto medio entre (x1,y1) y (x2,y2)
+
 --Relaciones
 --Sean A y B conjuntos tales que A = B = {1,2,3,...,30}
 --1. relacionDivisor :: Rel Int Int 
