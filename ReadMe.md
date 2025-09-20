@@ -27,4 +27,4 @@ En esta sección deben eliminar esta línea de texto, borrar la leyenda "Integra
 
 ## Comentarios
 
-Recuerden que opcionalmente pueden agregar un comentario (ver los lineamientos de entrega). Si es el caso, borren esta linea y dejen su comentario.
+Revisamos que el código compilara correctamente y no hubiera errores sin embargo al momento de hacer las pruebas unitarias tuvimos que remplazar una linea de codigo y ya al parecer funcionaba bien aunque si tuvimos muchas complicaciones para hacer lo de cabal build y cabal test 
